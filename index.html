@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kayla Virrly</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.8/css/line.min.css">
+  <title>Tabel 3x3</title>
+</head>
+
+<body>
+  <div id="content-container">
+    <h1>Kayla Virrly</h1>
+    <p id="typing-text"></p>
+    <!-- Social Media -->
+    <div class="social-links">
+      <a href="https://www.instagram.com/kvirrlyy/" target="_blank" class="social-link">
+        <i class="uil uil-instagram-alt" style="font-size: 40px; color: white;"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/kayla-virrly-52320a261/" target="_blank" class="social-link">
+        <i class="uil uil-linkedin-alt" style="font-size: 40px; color: white;"></i>
+      </a>
+      <a href="https://github.com/kaylaygmana/" target="_blank" class="social-link">
+        <i class="uil uil-github-alt" style="font-size: 40px; color: white;"></i>
+      </a>
+    </div>
+
+    <!-- Content Sections -->
+    <section id="aboutMe">
+      <h2 style="margin-top: 20px;">About</h2>
+      <img id="animatedImage" src="https://drive.google.com/thumbnail?id=17ipTgVELQn4GIfvXoJ6yojZDjgS7RD-Q&sz=w1000"
+        alt="kela" class="about-item" style="border-radius: 25%; width: 30%; margin-left: 50px; float: left; border: 5px solid rgb(106, 144, 151); margin-right: 50px;">
+      <p class="about-paragraph about-item">
+        I'm an enthusiastic learner, especially in the realm of technology, currently honing my skills in design.
+        I find joy in creating visually appealing and functional solutions, constantly exploring contemporary design concepts.
+        With a proactive mindset and adaptability, I stay abreast of the latest industry trends. My passion for learning
+        and design drives me to contribute valuable insights to challenging projects, aiming for meaningful user experiences.Here's some of my hobbies:
+      </p>
+      <ul class="about-item">
+        <li class="about-item">Designing</li>
+        <li class="about-item">Programming</li>
+        <li class="about-item">Drawing</li>
+      </ul>
+      <div class="table-container">
+        <table class="about-item">
+          <tr>
+            <th>Education</th>
+            <th>Year</th>
+          </tr>
+          <tr>
+            <td>SMKN 5 Samarinda</td>
+            <td>2019-2022</td>
+          </tr>
+          <tr>
+            <td>Universitas Mulawarman</td>
+            <td>2022-Now</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Portofolio</h2>
+      <div class="projects-container">
+        <div class="project" onclick="animateProject(0, 'FromRight'); showImage('https://drive.google.com/thumbnail?id=1u6XPJ_bDRI5d1bQJhFX1ivBBMxHshUXh&sz=w1000')">
+          <img src="https://drive.google.com/thumbnail?id=1u6XPJ_bDRI5d1bQJhFX1ivBBMxHshUXh&sz=w1000"
+            alt="Project 1" style="width: 380px; margin-left: 15px; height:283px;border: 3px solid rgb(106, 144, 151);">
+          <div class="overlay"></div>
+          <div class="project-caption">KONI Kaltim App</div>
+        </div>
+
+        <div class="project" onclick="animateProject(0, 'FromRight'); showImage('https://drive.google.com/thumbnail?id=1h027CpxidF5_ObYfeq5ixnekYvixQ-KY&sz=w1000')">
+          <img src="https://drive.google.com/thumbnail?id=1h027CpxidF5_ObYfeq5ixnekYvixQ-KY&sz=w1000"
+            alt="Project 1" style="width: 400px; height: 283px;border: 3px solid rgb(106, 144, 151);">
+          <div class="overlay"></div>
+          <div class="project-caption">Network Topology Mapping</div>
+        </div>
+        <div class="project" onclick="animateProject(0, 'FromLeft'); showImage('https://drive.google.com/thumbnail?id=1Lf2KFgNbsJyfh79BV9uVeO7cNQ7Lovg2&sz=w1000')">
+          <img src="https://drive.google.com/thumbnail?id=1Lf2KFgNbsJyfh79BV9uVeO7cNQ7Lovg2&sz=w1000"
+            alt="Project 1" style="width: 150px; height: 283px;border: 3px solid rgb(106, 144, 151);">
+          <div class="overlay"></div>
+          <div class="project-caption">Social Media Content Management</div>
+        </div>
+        <div class="project" onclick="animateProject(0, 'FromRight'); showImage('https://drive.google.com/thumbnail?id=1VSTGtCJX6HFIpabDqJ6feewmGKaXwRxd&sz=w1000')">
+          <img src="https://drive.google.com/thumbnail?id=1VSTGtCJX6HFIpabDqJ6feewmGKaXwRxd&sz=w1000"
+            alt="Project 1" style="width: 150px; height: 283px;border: 3px solid rgb(106, 144, 151);">
+          <div class="overlay"></div>
+          <div class="project-caption">Social Media Content Management</div>
+        </div>
+      </div>
+    </section>
+
+    <div id="imageModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage">
+    </div>
+
+    <section id="experience" class="animate-items">
+      <h2>Experience</h2>
+      <p>These are some of my academic and non-academic experiences.</p>
+      <div class="experience-container">
+        <!-- First row of images -->
+        <div class="project" onclick="showImage('https://drive.google.com/thumbnail?id=1rGBaR2e9t7cMmw6S9miIG_190Q222sXn&sz=w1000')">
+          <img src="https://drive.google.com/thumbnail?id=1rGBaR2e9t7cMmw6S9miIG_190Q222sXn&sz=w1000"
+            alt="Project 1" style="width: 300px; margin-left: 15px; height:200px;border: 3px solid rgb(106, 144, 151);">
+          <div class="overlay"></div>
+          <div class="project-caption">Database Programming</div>
+        </div>
+        <div class="project" onclick="showImage('https://drive.google.com/thumbnail?id=1CXZebDdYos9jSvDRyIAdiZsFuOfgSmjB&sz=w1000')">
+          <img src="https://drive.google.com/thumbnail?id=1CXZebDdYos9jSvDRyIAdiZsFuOfgSmjB&sz=w1000"
+            alt="Project 2" style="width: 300px; margin-left: 15px; height:200px;border: 3px solid rgb(106, 144, 151);">
+          <div class="overlay"></div>
+          <div class="project-caption">Koordinator Publikasi & Dokumentasi</div>
+        </div>
+        <div class="project" onclick="showImage('https://drive.google.com/thumbnail?id=1rGBaR2e9t7cMmw6S9miIG_190Q222sXn&sz=w1000')">
+          <img src="https://drive.google.com/thumbnail?id=1rGBaR2e9t7cMmw6S9miIG_190Q222sXn&sz=w1000"
+            alt="Project 3" style="width: 300px; margin-left: 15px; height:200px;border: 3px solid rgb(106, 144, 151);">
+          <div class="overlay"></div>
+          <div class="project-caption">Database Design</div>
+        </div>
+        <!-- Second row of images -->
+        <div class="project" onclick="showImage('https://drive.google.com/thumbnail?id=1DScFYLFdeKwDMQztlJNYfcHt0inH4G1v&sz=w1000')">
+          <img src="https://drive.google.com/thumbnail?id=1DScFYLFdeKwDMQztlJNYfcHt0inH4G1v&sz=w1000"
+            alt="Project 4" style="width: 300px; margin-left: 15px; height:200px;border: 3px solid rgb(106, 144, 151);">
+          <div class="overlay"></div>
+          <div class="project-caption">"Student Association [INFORSA]</div>
+        </div>
+        <div class="project" onclick="showImage('https://drive.google.com/thumbnail?id=1CXZebDdYos9jSvDRyIAdiZsFuOfgSmjB&sz=w1000')">
+          <img src="https://drive.google.com/thumbnail?id=1CXZebDdYos9jSvDRyIAdiZsFuOfgSmjB&sz=w1000"
+            alt="Project 5" style="width: 300px; margin-left: 15px; height:200px;border: 3px solid rgb(106, 144, 151);">
+          <div class="overlay"></div>
+          <div class="project-caption">Publication and Documentation Coordinator [INSEVENT]</div>
+        </div>
+        <div class="project" onclick="showImage('https://drive.google.com/thumbnail?id=13OqVeAM4rC6K6uIrPLsvKR-A3LQzG-Nr&sz=w1000')">
+          <img src="https://drive.google.com/thumbnail?id=13OqVeAM4rC6K6uIrPLsvKR-A3LQzG-Nr&sz=w1000"
+            alt="Project 6" style="width: 300px; margin-left: 15px; height:200px;border: 3px solid rgb(106, 144, 151);">
+          <div class="overlay"></div>
+          <div class="project-caption">Publication and Documentation Coordinator [MUBES INFORSA]</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contactMe" style="margin-bottom: 200px;">
+      <form action="https://api.web3forms.com/submit" method="POST">
+
+        <input type="hidden" name="access_key" value="c37eaf2d-7107-4e48-9e41-2d9b16509172">
+
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="Write your massage"></textarea>
+        <button type="submit">Submit Form</button>
+
+      </form>
+    </section>  
+
+    <div class="footer">
+      <p><a href="#aboutMe" class="button">About Me</a>
+        <a href="#projects" class="button" onclick="scrollToSection('projects')">Portofolio</a>
+        <a href="#experience" class="button" onclick="scrollToSection('experience')">Experience</a>
+        <a href="#contactMe" class="button">Contact Me</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

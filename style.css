@@ -1,0 +1,492 @@
+body {
+    background-color: rgb(31, 31, 31);
+    margin: 0;
+    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-size: 4em;
+    margin-top: 200px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: white;
+    font-size: 4em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+p {
+    color: white;
+    font-size: 1.2em;
+    margin-top: -30px;
+}
+
+.button {
+    color: white;
+    background-color: #343534;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 300px;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+
+#aboutMe .about-paragraph {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-top: 50px;
+    text-align: justify;
+    margin-left: 450px;
+    margin-right: 50px;
+    position: relative;
+}
+
+@keyframes slideFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+ul {
+    margin-top: -45px;
+    margin-bottom: 400px;
+    color: white;
+    text-align: left;
+    margin-left: 800px;
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    margin-right: 25px;
+    font-size: large;
+}
+
+#aboutMe .about-paragraph::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin-left: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.projects-container {
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.project {
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.project:hover .overlay {
+    opacity: 1;
+}
+
+.project-caption {
+    position: absolute;
+    top: 50%; /* Atur tinggi sesuai kebutuhan */
+    left: 50%; /* Atur lebar sesuai kebutuhan */
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5em; /* Atur ukuran teks sesuai kebutuhan */
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.project:hover .overlay {
+    opacity: 1;
+}
+
+.project:hover .project-caption {
+    opacity: 1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.social-links {
+    margin-bottom: 400px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-link {
+    margin-right: 10px; /* Adjust the spacing between the icons if needed */
+}
+
+.social-link img {
+    width: 40px; /* Adjust the width of your image */
+    height: 40px; /* Adjust the height of your image */
+    transition: filter 0.3s ease; /* Smooth transition effect */
+}
+
+.social-link:hover {
+    background-color: #555; /* Adjusted hover background color */
+}
+
+.social-link:hover img {
+    filter: brightness(70%); /* Darken the image on hover */
+}
+
+.footer {
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+
+#footer-links {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+    /* padding: 10px; */
+    height: 10px;
+}
+
+#projects h2::after {
+    content: "Here's some work i've done";
+    font-size: 0.5em;
+    display: block;
+    text-align: center;
+    margin-top: 5px; /* Sesuaikan margin dengan kebutuhan */
+    color: white; /* Sesuaikan warna teks dengan kebutuhan */
+}
+
+#experience {
+    text-align: center; /* Center-align the text within the experience section */
+    display: contents;
+}
+
+.experience-container {
+    display: flex;
+    justify-content: center; /* Center-align the children (projects) horizontally */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if the container is too narrow */
+}
+
+.experience-container .project {
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.experience-container .project img,
+.projects-container .project img {
+    width: 100%; /* Ubah sesuai kebutuhan */
+    height: auto; /* Atau sesuaikan dengan nilai tertentu */
+}
+
+
+.experience-container .project .overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.experience-container .project:hover .overlay {
+    opacity: 1;
+}
+
+.experience-container .project .project-caption {
+    position: absolute;
+    /* top: 50%;
+    left: 50%; */
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5em;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.experience-container .project:hover .overlay,
+.experience-container .project:hover .project-caption {
+    opacity: 1;
+}
+
+.container {
+    width: 400px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    margin-bottom: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: rgb(106, 144, 151);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(106, 144, 151);
+}
+
+.table-container {
+    margin-top: -390px;
+    display: flex;
+    color: white;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 60%;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    margin-left: 150px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(106, 144, 151);
+    color: white;
+}
+
+.animated-object {
+    transition: transform 3s ease; /* You can adjust the duration and timing function */
+}
+
+.animate {
+    transform: translateX(50px); /* Adjust the distance you want the object to move */
+}
+
+.about-item {
+    transition: transform 2.5s ease; /* You can adjust the duration and timing function */
+}
+
+.animate-items {
+    transform: translateX(50px); /* Adjust the distance you want the items to move */
+}
+
+@keyframes slideFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.experience-container .project:nth-child(1) {
+    animation: slideFromBottom 2.0s ease 0.5s forwards;
+}
+
+.experience-container .project:nth-child(2) {
+    animation: slideFromBottom 2.0s ease 1s forwards;
+}
+
+.experience-container .project:nth-child(3) {
+    animation: slideFromBottom 2.0s ease 1.5s forwards;
+}
+
+.experience-container .project:nth-child(4) {
+    animation: slideFromBottom 2.0s ease 2s forwards;
+}
+
+.experience-container .project:nth-child(5) {
+    animation: slideFromBottom 2.0s ease 2.5s forwards;
+}
+
+.experience-container .project:nth-child(6) {
+    animation: slideFromBottom 2.0s ease 3s forwards;
+}
+
+#typing-text {
+    color: white;
+    font-size: 1.2em;
+    margin-top: -20px; /* Adjust margin as needed */
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+.social-links {
+    margin-bottom: 400px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+#contactMe {
+    height: 50vh; /* Sesuaikan tinggi sesuai kebutuhan, misalnya 50% dari tinggi layar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#typing-text {
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 20px; /* Sesuaikan margin sebagai ruang di antara teks dan formulir */
+}
+
+form {
+    width: 50%; /* Sesuaikan lebar formulir, misalnya 50% dari lebar layar */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+input,
+textarea,
+button {
+    margin-bottom: 10px; /* Sesuaikan margin antar elemen */
+    padding: 8px;
+}
+
+button {
+    align-self: flex-end; /* Menempatkan tombol di sebelah kanan */
+}
+
+/* Define fadeIn animation */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .projects-container .project:nth-child(1) {
+    animation: slideFromBottom 2.0s ease 0.5s forwards;
+}
+
+.projects-container .project:nth-child(2) {
+    animation: slideFromBottom 2.0s ease 0.5s forwards;
+}
+.projects-container .project:nth-child(3) {
+    animation: slideFromBottom 2.0s ease 0.5s forwards;
+}
+.projects-container .project:nth-child(4) {
+    animation: slideFromBottom 2.0s ease 0.5s forwards;
+}
