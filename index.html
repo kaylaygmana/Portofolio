@@ -13,6 +13,8 @@
 </head>
 
 <body>
+ 
+  </section>  
   <div id="content-container">
     <h1>Kayla Virrly</h1>
     <p id="typing-text"></p>
@@ -65,7 +67,8 @@
     </section>
 
     <section id="portofolio">
-      <h2>Portofolio</h2>
+      <h2 style="margin-top: 100px;">Portofolio</h2>
+      <p style="margin-bottom: 80px; margin-top: 50px;">Here are some projects i've done</p>
       <div class="projects-container">
         <div class="project" onclick="animateProject(0, 'FromRight'); showImage('https://drive.google.com/thumbnail?id=1u6XPJ_bDRI5d1bQJhFX1ivBBMxHshUXh&sz=w1000')">
           <img src="https://drive.google.com/thumbnail?id=1u6XPJ_bDRI5d1bQJhFX1ivBBMxHshUXh&sz=w1000"
@@ -100,7 +103,8 @@
       <img class="modal-content" id="modalImage">
     </div>
 
-    <section id="experience" class="animate-items">
+
+    <section class="animate-items" id="experience">
       <h2>Experience</h2>
       <p>These are some of my academic and non-academic experiences.</p>
       <div class="experience-container">
@@ -145,27 +149,28 @@
       </div>
     </section>
 
-    <section id="contactMe" style="margin-bottom: 200px;">
+    <section id="contactMe">
+      <h2 style="margin-top: -250px; margin-bottom: 100px;">Let's work together!</h2>
+      <h4 style="color: white;">Feel free to reach me through this form</h4>
       <form action="https://api.web3forms.com/submit" method="POST">
-
+  
         <input type="hidden" name="access_key" value="c37eaf2d-7107-4e48-9e41-2d9b16509172">
-
+  
         <input type="text" name="name" placeholder="Your name" required>
         <input type="email" name="email" placeholder="Your email" required>
         <textarea name="message" placeholder="Write your massage"></textarea>
         <button type="submit">Submit Form</button>
-
+  
       </form>
-    </section>  
 
-    <div class="footer">
-      <p><a href="#aboutMe" class="button">About Me</a>
-        <a href="#portofolio" class="button" onclick="scrollToSection('projects')">Portofolio</a>
-        <a href="#experience" class="button" onclick="scrollToSection('experience')">Experience</a>
-        <a href="#contactMe" class="button">Contact Me</a>
-      </p>
-    </div>
-  </div>
+      <div class="footer">
+        <p>
+          <a href="#aboutMe" class="button">About Me</a>
+          <a href="#portofolio" class="button">Portofolio</a>
+          <a href="#experience" class="button">Experience</a>
+          <a href="#contactMe" class="button">Contact Me</a>
+        </p>
+      </div>
 
   <script src="script.js"></script>
 </body>
