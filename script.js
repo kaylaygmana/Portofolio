@@ -61,7 +61,7 @@ if (experienceButton) {
     });
 }
     const textElement = document.getElementById('typing-text');
-    const textToType = "salken lur";
+    const textToType = "Hello there!";
     let index = 0;
 
     function typeText() {
