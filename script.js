@@ -1,25 +1,34 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', function () {
+
     function showImage(imageSrc) {
-        var modal = document.getElementById('imageModal');
-        var modalImage = document.getElementById('modalImage');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
 
         modal.style.display = 'block';
         modalImage.src = imageSrc;
     }
 
+
     function closeModal() {
-        var modal = document.getElementById('imageModal');
+        const modal = document.getElementById('imageModal');
         modal.style.display = 'none';
     }
 
+
     window.onclick = function (event) {
-        var modal = document.getElementById('imageModal');
+        const modal = document.getElementById('imageModal');
         if (event.target == modal) {
-            modal.style.display = 'none';
+            closeModal();
         }
     }
+
+
+    document.querySelectorAll('.project').forEach(function (project) {
+        project.addEventListener('click', function () {
+            const imageSrc = this.querySelector('img').src;
+            showImage(imageSrc);
+        });
+    });
 
     function scrollToSection(sectionId) {
         const section = document.getElementById(sectionId);
@@ -31,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Add the following event listener to handle the smooth scrolling for anchor links
+  
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -41,47 +50,53 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    const aboutMeButton = document.querySelector('.button[href="#aboutMe"]');
-    const animatedItems = document.querySelectorAll('.about-item');
+
+    const experienceButton = document.getElementById('experience-button');
+
+    if (experienceButton) {
+        experienceButton.addEventListener('click', function () {
+            const experienceSection = document.getElementById('experience');
+
+            if (experienceSection) {
+                experienceSection.classList.add('animate-items');
+                experienceSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 
 
-    // Mendapatkan referensi ke tombol Experience
-const experienceButton = document.getElementById('experience-button');
-
-// Menambahkan event listener ke tombol Experience
-if (experienceButton) {
-    experienceButton.addEventListener('click', function () {
-        // Menemukan elemen dengan ID 'experience'
-        const experienceSection = document.getElementById('experience');
-
-        // Menambahkan kelas 'animate-items' untuk memicu animasi
-        if (experienceSection) {
-            experienceSection.classList.add('animate-items');
-        }
-    });
-}
     const textElement = document.getElementById('typing-text');
-    const textToType = "Hello there!";
-    let index = 0;
+    const greetings = ["I am a Student of Mulawarman University", "Social Media Content Manager", "Network Topology Mapper", "Content Designer"];
+    let greetingIndex = 0;
+    let charIndex = 0;
 
     function typeText() {
-        textElement.textContent += textToType[index];
-        index++;
+        if (greetingIndex < greetings.length) {
+            textElement.textContent += greetings[greetingIndex][charIndex];
+            charIndex++;
 
-        if (index < textToType.length) {
-            setTimeout(typeText, 50); // Adjust the typing speed (in milliseconds)
-        } else {
-            
+            if (charIndex < greetings[greetingIndex].length) {
+                setTimeout(typeText, 50);
+            } else {
+
+                setTimeout(resetText, 1000);
+            }
         }
     }
 
     function resetText() {
-        textElement.textContent = "";
-        index = 0;
-        setTimeout(typeText, 500); // Wait for 0.5 seconds before starting the typing again
+        let currentText = textElement.textContent;
+        if (currentText.length > 7) {
+            textElement.textContent = currentText.slice(0, -1);
+            setTimeout(resetText, 50);
+        } else {
+            // Text erased, move to the next greeting
+            greetingIndex = (greetingIndex + 1) % greetings.length;
+            charIndex = 0;
+            setTimeout(typeText, 500);
+        }
     }
 
-    // Start typing when the page loads
+
     typeText();
 });
-
